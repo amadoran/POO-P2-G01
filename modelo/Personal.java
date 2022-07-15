@@ -8,7 +8,14 @@ public class Personal{
   private int telefono;
   private String correo;
 
-
+  //constructor
+  public Personal(int cedula, String nombre, String apellido, int telefono, String correo){
+    this.cedula = cedula;
+    this.nombre= nombre;
+    this.apellido = apellido;
+    this.telefono = telefono;
+    this.correo= correo;
+  }
   //setters
 
   public void setCedula(int cedula){
