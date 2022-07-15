@@ -1,5 +1,4 @@
 package modelo;
-import java.util.Scanner;
 public class Servicio{
   private String nombreServicio;
   private int duracionServicio;
