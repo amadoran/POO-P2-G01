@@ -18,11 +18,13 @@ public class Empleado extends Personal{
     System.out.println("Un nuevo empleado se ha unido");
   }
 
-  /*public void editarEmpleado(String nombre, String apellido, int telefono, String correo, Estado estado){
-    if(!(new Empleado(nombre,apellido,telefono,correo,estado).equals())){
-      
-    }
-  }*/
+  public void editarEmpleado(String nombre, String apellido, int telefono, String correo, Estado estado){
+    setNombre(nombre);
+    setApellido(apellido);
+    setTelefono(telefono);
+    setCorreo(correo);
+    this.estado = estado;
+  }
 
   public void eliminarEmpleado(){
     estado = Estado.INACTIVO;
@@ -37,4 +39,4 @@ public class Empleado extends Personal{
       "Estado: "+estado +"]";
   }
   }
-}
+
