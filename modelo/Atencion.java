@@ -1,5 +1,4 @@
 package modelo;
-
 import java.util.ArrayList;
 
 public class Atencion{
@@ -7,6 +6,7 @@ public class Atencion{
   private Cita cita;
   private Empleado atendio;
   private int duracionReal;
+
   public Atencion(Cita cita, Empleado atendio, int minutos){
     servicio = cita.getServicio();
     this.cita = cita;
@@ -26,5 +26,60 @@ public class Atencion{
       System.out.println("No se encontró una cita con esa cédula");
     }
   }
-  public static Atencion consultarAtenciones()
+  public static Atencion[] consultarAtenciones(int cedula, ArrayList<Personal> personas, ArrayList<Atencion> atenciones){
+    ArrayList<Atencion> atencionesEncontradas = new ArrayList<>();
+    Personal personaEncontrada;
+    for (Personal persona: personas){
+      if (persona.getCedula() == cedula){
+        personaEncontrada = persona;
+      }
+    }
+    if (personaEncontrada instanceof Empleado){
+      for (Atencion atencion: atenciones){
+        if (atencion.getAtendio().equals(personaEncontrada)){
+          atencionesEncontradas.add(atencion);
+        }
+      }
+    } else if(personaEncontrada instanceof Cliente){
+      for (Atencion atencion: atenciones){
+        if (atencion.getCita().getCliente().equals(personaEncontrada)){
+          atencionesEncontradas.add(atencion);
+        }
+      }
+    } else {
+      System.out.println("No se encontró usuario con cédula: " + cedula);
+      Atencion[] arr = new Atencion[1];
+      return arr;
+    }
+    Atencion[] arr = new Atencion[atencionesEncontradas.size()];
+    for (int i = 0; i<atencionesEncontradas.size(); i++){
+      arr[i] = atencionesEncontradas.get(i);
+    }
+    return arr;
+  }
+  public static Atencion[] consultarAtenciones(String fecha, ArrayList<Atencion> atenciones){
+    ArrayList<Atencion> atencionesEncontradas = new ArrayList<>();
+    for (Atencion atencion: atenciones){
+      if (atencion.getCita().getFechaCita().equals(fecha)){
+        atencionesEncontradas.add(atencion);
+      }
+    }
+    Atencion[] arr = new Atencion[atencionesEncontradas.size()];
+    for (int i = 0; i<atencionesEncontradas.size(); i++){
+      arr[i] = atencionesEncontradas.get(i);
+    }
+    return arr;
+  }
+  public Empleado getAtendio(){
+    return atendio;
+  }
+  public Cita getCita(){
+    return cita;
+  }
+  public Servicio getServicio(){
+    return servicio;
+  }
+  public int getDuracion(){
+    return duracionReal;
+  }
 }
