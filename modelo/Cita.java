@@ -11,22 +11,21 @@ public class Cita{
     this.cliente=cliente;
     this.empleado=empleado;
   }
-  public String crearCita(String fechacita,Servicio servicio,Cliente cliente, Empleado empleado){
+  public static String crearCita(String fechacita,Servicio servicio,Cliente cliente, Empleado empleado){
     new Cita(fechacita,servicio,cliente,empleado);
     return "Cita creada";
-    
   }
-   public String consultarCita(String fechacita,String tipoCita){
-    Scanner sc=new Scanner(System.in);
-       String fechaAConsultar;
-       System.out.println("Ingrese la fecha a consultar");
-       fechaAConsultar=sc.nextLine();
-       for(Cita c :Cita){
-           if (c.getFechaCita().equals(fechaAConsultar)){
-               System.out.println(c);
-           }
-       }
+   public static void consultarCita(String fechacita, ArrayList<Cita> citas){
+    Scanner sc =new Scanner(System.in);
+      String fechaAConsultar;
+      System.out.println("Ingrese la fecha a consultar");
+      fechaAConsultar=sc.nextLine();
+      for(Cita c : citas){
+        if (c.getFechaCita().equals(fechaAConsultar)){
+          System.out.println(c);
+        }
       }
+    }
   public static void eliminarCita(){
     Scanner usuario=new Scanner(System.in);
     System.out.println("Ingrese la cedula del usuario");

@@ -14,7 +14,7 @@ public class Atencion{
     duracionReal = minutos;
   }
   public static void registrarAtencion(ArrayList<Cita> citas, int cedula, Empleado atendio, int minutos){
-    Cita citaEncontada;
+    Cita citaEncontada = null;
     for (Cita cita: citas){
       if (cita.getCliente().getCedula() == cedula){
         citaEncontada = cita;
@@ -28,7 +28,7 @@ public class Atencion{
   }
   public static Atencion[] consultarAtenciones(int cedula, ArrayList<Personal> personas, ArrayList<Atencion> atenciones){
     ArrayList<Atencion> atencionesEncontradas = new ArrayList<>();
-    Personal personaEncontrada;
+    Personal personaEncontrada = null;
     for (Personal persona: personas){
       if (persona.getCedula() == cedula){
         personaEncontrada = persona;

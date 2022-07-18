@@ -4,16 +4,18 @@ public class Servicio{
   private int duracionServicio;
   private float precio;
   private Estado estado;
+  private Empleado empleado;
 
-  public Servicio(String nombreServicio, int minutos, float precio, Estado estado){
+  public Servicio(String nombreServicio, int minutos, float precio, Estado estado, Empleado empleado){
     this.nombreServicio = nombreServicio;
     duracionServicio = minutos;
     this.precio = precio;
     this.estado = estado;
+    this.empleado = empleado;
   }
   //El metodo es estatico porque no debe hacer referencia a ninguna instancia de servicio
-  public static void agregarServicio(String nombre, int minutos, float precio){
-    new Servicio(nombre, minutos, precio, Estado.INACTIVO);
+  public static void agregarServicio(String nombre, int minutos, float precio, Empleado empleado){
+    new Servicio(nombre, minutos, precio, Estado.INACTIVO, empleado);
   }
   
   public void editarServicio(String nombre){
@@ -44,6 +46,9 @@ public class Servicio{
   }
   public Estado getEstado(){
     return estado;
+  }
+  public Empleado getEmpleado(){
+    return empleado;
   }
 
   public String toString(){
