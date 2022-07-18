@@ -26,17 +26,17 @@ public class Cita{
         }
       }
     }
-  public static void eliminarCita(){
+  public static void eliminarCita(ArrayList<Cita> citas){
     Scanner usuario=new Scanner(System.in);
     System.out.println("Ingrese la cedula del usuario");
     int Cedulaeliminar=usuario.nextInt();
     System.out.println("Escriba la fecha de la cita que desea eliminar");
     Scanner usuario2=new Scanner(System.in);
     String fecha=usuario2.nextLine();
-    for(int i=0;i<Cita.size();i++)
+    for(int i=0;i<citas.size();i++)
     {
-      if(usuario2.equals(Cita.get(i).getFechaCita()&&usuario2.equals(Cita.get(i).getCliente().getCedula()))){
-        Cita.remove(i);
+      if(fecha.equals(citas.get(i).getFechaCita())&&(Cedulaeliminar == (citas.get(i).getCliente().getCedula()))){
+        citas.remove(i);
       }
     }    
     

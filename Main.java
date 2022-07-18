@@ -64,16 +64,29 @@ public class Main{
         int opcionCita = input.nextInt();
         switch (opcionCita){
           case 1:
-            
-            Cita.crearCita();
+            System.out.print("Ingrese una la fecha para la cita: ");
+            String fecha = input.nextLine();
+            System.out.println(servicios);
+            System.out.print("Ingrese el indice del servicio que desea: ");
+            int indice = input.nextInt();
+            input.nextLine();
+            System.out.print("Ingrese la cedula del cliente");
+            int cedula = input.nextInt();
+            Cliente cl = null;
+            for (Personal persona: personas){
+              if (persona.getCedula() == cedula){
+                cl = (Cliente) persona;
+              }
+            }
+            Cita.crearCita(fecha, servicios.get(indice), cl, servicios.get(indice).getEmpleado());
             break;
           case 2:
-            Cita.eliminarCita();
+            Cita.eliminarCita(citas);
             break;
           case 3:
             System.out.println("Ingrese la fecha de la cita");
-            String fecha = input.nextLine();            
-            Cita.consultarCita(fecha, citas);
+            String fecha2 = input.nextLine();            
+            Cita.consultarCita(fecha2, citas);
             break;
           default:
             System.out.println("El número ingresado es incorrecto");
@@ -102,12 +115,32 @@ public class Main{
             Atencion.registrarAtencion(citas, cedula, emp, duracion);
             break;
           case 2:
-            System.out.println()
+            System.out.println("Desea buscar por fecha o cedula (F/C): ");
+            char busqueda = input.nextLine().toUpperCase().charAt(0);
+            switch (busqueda){
+              case 'F':
+                System.out.print("Ingrese la fecha: ");
+                String fecha = input.nextLine();
+                Atencion.consultarAtenciones(fecha, atenciones);
+                break;
+              case 'C':
+                System.out.print("Ingrese la cedula: ");
+                int cedula2 = input.nextInt();
+                Atencion.consultarAtenciones(cedula2, personas, atenciones);
+                break;
+              default:
+                System.out.println("Caracter incorrecto");
+            }
+              break;
+          default:
+            System.out.println("Valor incorrecto");
         }
+        break;
       case 6:
         break;
       default:
         System.out.println("El número ingresado es incorrecto");
     }
+  input.close();
   }
 }
