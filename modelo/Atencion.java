@@ -1,12 +1,12 @@
 package modelo;
 import java.util.ArrayList;
-
+// Se crea la clase atencion con sus respectivos atributos
 public class Atencion{
   private Servicio servicio;
   private Cita cita;
   private Empleado atendio;
   private int duracionReal;
-
+  //Constructor Atencion
   public Atencion(Cita cita, Empleado atendio, int minutos){
     servicio = cita.getServicio();
     this.cita = cita;
