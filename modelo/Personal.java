@@ -1,14 +1,17 @@
 package modelo;
 import java.util.*;
 
+//Clase abstracta "Personal"
 public abstract class Personal{
+
+  //Atributos de cada miembro del Personal
   private int cedula;
   private String nombre;
   private String apellido;
   private int telefono;
   private String correo;
 
-  //constructor
+  //constructor Personal
   public Personal(int cedula, String nombre, String apellido, int telefono, String correo){
     this.cedula = cedula;
     this.nombre= nombre;
