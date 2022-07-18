@@ -15,7 +15,7 @@ public class Cita{
     new Cita(fechacita,servicio,cliente,empleado);
     return "Cita creada";
   }
-   public static void consultarCita(String fechacita, ArrayList<Cita> citas){
+   public static void consultarCita(ArrayList<Cita> citas){
     Scanner sc =new Scanner(System.in);
       String fechaAConsultar;
       System.out.println("Ingrese la fecha a consultar");
@@ -41,12 +41,16 @@ public class Cita{
     }    
     
   }
-    public String getFechaCita(){
+  public String getFechaCita(){
     return fechacita;
   } 
- public Cliente getCliente(){
-  return cliente;}
-public Servicio getServicio(){
-  return servicio;
-}
+  public Cliente getCliente(){
+    return cliente;
+  }
+  public Servicio getServicio(){
+    return servicio;
+  }
+  public String toString(){
+    return "Cita {FechaCita: " + fechacita + ", Servicio: " + servicio + ", Cliente: " + cliente + ", Empleado: " + empleado + "}";
+  }
 }

@@ -1,7 +1,7 @@
 package modelo;
 import java.util.*;
 
-public class Personal{
+public abstract class Personal{
   private int cedula;
   private String nombre;
   private String apellido;
@@ -57,5 +57,8 @@ public class Personal{
 
   public String getCorreo(){
   return correo;
+  }
+  public String toString(){
+    return "Cedula: " + cedula + ", Nombre:" + nombre + ", Apellido:" + apellido + ", Telefono: " + telefono + ", Correo: " + correo;
   }
 }

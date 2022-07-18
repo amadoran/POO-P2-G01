@@ -15,5 +15,9 @@ public class Cliente extends Personal{
     setTelefono(telefono);
     setCorreo(correo);
     this.representante = representante;
-    }
   }
+  @Override
+  public String toString(){
+    return "Cliente{"+ super.toString() + ", " + representante + "}";
+  }
+}

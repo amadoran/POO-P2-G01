@@ -30,6 +30,7 @@ public class Empleado extends Personal{
     estado = Estado.INACTIVO;
   }
 
+  @Override
   public String toString(){
     return "Empleado[\n" +
       "Nombre: "+getNombre() + "\n" +
