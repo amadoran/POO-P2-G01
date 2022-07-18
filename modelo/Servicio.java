@@ -17,7 +17,7 @@ public class Servicio{
   public static void agregarServicio(String nombre, int minutos, float precio, Empleado empleado){
     new Servicio(nombre, minutos, precio, Estado.INACTIVO, empleado);
   }
-  
+  //Sobrecarga para editar los atributos de un servicio
   public void editarServicio(String nombre){
     nombreServicio = nombre;
   }

@@ -13,6 +13,7 @@ public class Atencion{
     this.atendio = atendio;
     duracionReal = minutos;
   }
+  //Metodo para registarAtencion
   public static void registrarAtencion(ArrayList<Cita> citas, int cedula, Empleado atendio, int minutos){
     Cita citaEncontada = null;
     for (Cita cita: citas){
@@ -26,6 +27,7 @@ public class Atencion{
       System.out.println("No se encontró una cita con esa cédula");
     }
   }
+  //Se sobrecarga este metodo para buscar por cedula o por fecha
   public static Atencion[] consultarAtenciones(int cedula, ArrayList<Personal> personas, ArrayList<Atencion> atenciones){
     ArrayList<Atencion> atencionesEncontradas = new ArrayList<>();
     Personal personaEncontrada = null;
@@ -57,6 +59,7 @@ public class Atencion{
     }
     return arr;
   }
+  //Busqueda por fecha
   public static Atencion[] consultarAtenciones(String fecha, ArrayList<Atencion> atenciones){
     ArrayList<Atencion> atencionesEncontradas = new ArrayList<>();
     for (Atencion atencion: atenciones){
