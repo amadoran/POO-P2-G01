@@ -30,8 +30,15 @@ public class Cita{
     Scanner usuario=new Scanner(System.in);
     System.out.println("Ingrese la cedula del usuario");
     int Cedulaeliminar=usuario.nextInt();
-  
-    
+    System.out.println("Escriba la fecha de la cita que desea eliminar");
+    Scanner usuario2=new Scanner(System.in);
+    String fecha=usuario2.nextLine();
+    for(int i=0;i<Cita.size();i++)
+    {
+      if(usuario2.equals(Cita.get(i).getFechaCita()&&usuario2.equals(Cita.get(i).getCliente().getCedula()))){
+        Cita.remove(i);
+      }
+    }    
     
   }
     public String getFechaCita(){
