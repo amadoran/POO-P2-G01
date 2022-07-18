@@ -17,26 +17,21 @@ public class Cita{
     
   }
    public String consultarCita(String fechacita,String tipoCita){
-    Scanner usuario2=new Scanner(System.in);
-     if(fechacita.isEmpty()){
-       System.out.println("No hay citas pendientes");
-      
-     }
-     else{
-       System.out.println("Escriba la fecha de la cita que desea eliminar");
-            System.out.println("Ingrese la fecha de la cita:");
-     String fechausuario=usuario2.nextLine();
-       for (int i=0;i<Cita.size();i++){
-         if(fechausuario.euals(Cita.get(i).getFechaCita()&&
-         
+    Scanner sc=new Scanner(System.in);
+       String fechaAConsultar;
+       System.out.println("Ingrese la fecha a consultar");
+       fechaAConsultar=sc.nextLine();
+       for(Cita c :Cita){
+           if (c.getFechaCita().equals(fechaAConsultar)){
+               System.out.println(c);
+           }
+       }
       }
-     }
-  }
-  public void eliminarCita(){
+  public static void eliminarCita(){
     Scanner usuario=new Scanner(System.in);
     System.out.println("Ingrese la cedula del usuario");
     int Cedulaeliminar=usuario.nextInt();
-    
+  
     
     
   }
