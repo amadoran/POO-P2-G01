@@ -12,7 +12,11 @@ public class Empleado extends Personal{
   public Empleado(int cedula,String nombre, String apellido, int telefono, String correo, Estado estado){
     super(cedula, nombre, apellido, telefono,correo);
     this.estado = estado;
-    
+  }
+
+  public Empleado(String nombre, String apellido){
+    super(nombre, apellido);
+    estado = Estado.INACTIVO;
   }
 
   //metodo para agregar a los empleados

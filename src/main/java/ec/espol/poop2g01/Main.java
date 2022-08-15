@@ -1,5 +1,5 @@
 //Clase menú
-package ec.espol.poop2g1;
+package ec.espol.poop2g01;
 import java.util.ArrayList;
 import modelo.*;
 import java.util.Scanner;

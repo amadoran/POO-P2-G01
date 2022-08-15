@@ -19,6 +19,10 @@ public abstract class Personal{
     this.telefono = telefono;
     this.correo= correo;
   }
+  public Personal(String nombre, String apellido){
+    this.nombre = nombre;
+    this.apellido = apellido;
+  }
   //setters
 
   public void setCedula(int cedula){

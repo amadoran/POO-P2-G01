@@ -1,4 +1,4 @@
-package ec.espol.poop2g1;
+package ec.espol.poop2g01;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

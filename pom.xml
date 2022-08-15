@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>ec.espol.poop2g1/ec.espol.poop2g1.Application</mainClass>
+                            <mainClass>ec.espol.poop2g1/ec.espol.poop2g01.Application</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

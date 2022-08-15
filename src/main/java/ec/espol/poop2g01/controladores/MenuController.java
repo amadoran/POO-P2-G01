@@ -1,4 +1,4 @@
-package ec.espol.poop2g1;
+package ec.espol.poop2g01.controladores;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
