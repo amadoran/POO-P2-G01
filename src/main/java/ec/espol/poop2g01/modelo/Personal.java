@@ -1,8 +1,8 @@
-package modelo;
-import java.util.*;
+package ec.espol.poop2g01.modelo;
+import java.io.Serializable;
 
 //Clase abstracta "Personal"
-public abstract class Personal{
+public abstract class Personal implements Serializable{
 
   //Atributos de cada miembro del Personal
   private int cedula;

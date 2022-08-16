@@ -1,5 +1,6 @@
-package modelo;
+package ec.espol.poop2g01.modelo;
 import java.util.ArrayList;
+
 // Se crea la clase atencion con sus respectivos atributos
 public class Atencion{
   private Servicio servicio;

@@ -1,5 +1,4 @@
-package modelo;
-import java.util.*;
+package ec.espol.poop2g01.modelo;
 
 //Clase Empleado heredada de su clase padre Personal
 public class Empleado extends Personal{
