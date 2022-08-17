@@ -1,4 +1,4 @@
-package modelo;
+package ec.espol.poop2g01.modelo;
 import java.util.*;
 //Se crea la clase cita con sus respectivos atributos
 public class Cita{

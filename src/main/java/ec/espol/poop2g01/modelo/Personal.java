@@ -1,8 +1,8 @@
-package modelo;
-import java.util.*;
+package ec.espol.poop2g01.modelo;
+import java.io.Serializable;
 
 //Clase abstracta "Personal"
-public abstract class Personal{
+public abstract class Personal implements Serializable{
 
   //Atributos de cada miembro del Personal
   private int cedula;
@@ -18,6 +18,10 @@ public abstract class Personal{
     this.apellido = apellido;
     this.telefono = telefono;
     this.correo= correo;
+  }
+  public Personal(String nombre, String apellido){
+    this.nombre = nombre;
+    this.apellido = apellido;
   }
   //setters
 

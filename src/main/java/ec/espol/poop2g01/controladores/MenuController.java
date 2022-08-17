@@ -1,24 +1,20 @@
-package ec.espol.poop2g1;
+package ec.espol.poop2g01.controladores;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import ec.espol.poop2g01.Application;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import modelo.Atencion;
-import modelo.Cita;
-import modelo.Cliente;
-import modelo.Representante;
 
-import javax.swing.*;
-import java.awt.event.*;
+import java.io.IOException;
+
 public class MenuController {
     @FXML
-    private AnchorPane scene;
+    private AnchorPane anchorPane;
     @FXML
     private Button servicios;
     @FXML
@@ -32,17 +28,23 @@ public class MenuController {
     @FXML
     private Button salirBtn;
 
-    public void salir() {
+    public void salir(){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Alerta");
         alert.setHeaderText("Va a salir del programa.");
         alert.setContentText("Click \"OK\" para confirmar.");
-        if (alert.showAndWait().get() == ButtonType.OK) {
-            Stage stage = (Stage) scene.getScene().getWindow();
+        if (alert.showAndWait().get() == ButtonType.OK){
+            Stage stage = (Stage) anchorPane.getScene().getWindow();
             stage.close();
         }
     }
 
+    public void cambiarAServicios() throws IOException {
+        Stage stage = (Stage) anchorPane.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("servicios-view.fxml"));
+        Scene scene1 = new Scene(fxmlLoader.load(), 600, 400);
+        stage.setTitle("Servicios");
+        stage.setScene(scene1);
+        stage.show();
+    }
 }
-
-

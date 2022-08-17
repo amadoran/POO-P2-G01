@@ -1,5 +1,12 @@
-package modelo;
-public class Servicio{
+package ec.espol.poop2g01.modelo;
+
+import ec.espol.poop2g01.Application;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Servicio implements Serializable {
   private String nombreServicio;
   private int duracionServicio;
   private float precio;
@@ -16,6 +23,18 @@ public class Servicio{
   //El metodo es estatico porque no debe hacer referencia a ninguna instancia de servicio
   public static void agregarServicio(String nombre, int minutos, float precio, Empleado empleado){
     new Servicio(nombre, minutos, precio, Estado.INACTIVO, empleado);
+  }
+
+  public static List<Servicio> cargarServicios(){
+      List<Servicio> servicios = new ArrayList<>();
+      try (ObjectInputStream ois = new ObjectInputStream(Application.class.getResourceAsStream("archivos/servicios.dat"))){
+          servicios = (ArrayList<Servicio>) ois.readObject();
+      } catch (IOException e){
+          e.printStackTrace();
+      } catch (ClassNotFoundException e){
+        e.printStackTrace();
+      }
+      return servicios;
   }
   //Sobrecarga para editar los atributos de un servicio
   public void editarServicio(String nombre){
@@ -50,7 +69,7 @@ public class Servicio{
   public Empleado getEmpleado(){
     return empleado;
   }
-
+  @Override
   public String toString(){
     return "Servicio {Nombre: " + nombreServicio + ", Duración (minutos): " + duracionServicio + ", Precio: $" + precio + ", Estado:" + estado + "}";
   }

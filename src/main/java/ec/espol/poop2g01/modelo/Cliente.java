@@ -1,4 +1,4 @@
-package modelo;
+package ec.espol.poop2g01.modelo;
 public class Cliente extends Personal{
   private Representante representante;
   public Cliente( int cedula,String nombre, String apellido,int telefono, String correo, Representante representante){
@@ -10,10 +10,10 @@ public class Cliente extends Personal{
     System.out.println("Cliente agregado");
   }
   public void editarCliente( String nombre, String apellido, int telefono, String correo, Representante representante){
-    setNombre(nombre);
-    setApellido(apellido);
-    setTelefono(telefono);
-    setCorreo(correo);
+    super.setNombre(nombre);
+    super.setApellido(apellido);
+    super.setTelefono(telefono);
+    super.setCorreo(correo);
     this.representante = representante;
   }
   @Override

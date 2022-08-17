@@ -1,7 +1,8 @@
 //Clase menú
-package ec.espol.poop2g1;
+package ec.espol.poop2g01;
+import java.io.*;
 import java.util.ArrayList;
-import modelo.*;
+import ec.espol.poop2g01.modelo.*;
 import java.util.Scanner;
 
 public class Main{
@@ -33,6 +34,11 @@ public class Main{
     
   public static void main(String[] args){
     inicializarSistema();
+    try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("src/main/resources/ec/espol/poop2g01/archivos/servicios.dat"))){
+      os.writeObject(servicios);
+    } catch (IOException e){
+      e.printStackTrace();
+    }
     Scanner input = new Scanner(System.in);
     System.out.println("---MENU---");
     //Un switch para las opciones del menú

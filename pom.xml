@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ec.espol</groupId>
-    <artifactId>POO-P2-G1</artifactId>
+    <artifactId>POO-P2-G01</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>POO-P2-G1</name>
+    <name>POO-P2-G01</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>ec.espol.poop2g1/ec.espol.poop2g1.Application</mainClass>
+                            <mainClass>ec.espol.poop2g1/ec.espol.poop2g01.Application</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
