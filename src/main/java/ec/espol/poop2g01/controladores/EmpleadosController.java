@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
@@ -31,7 +32,7 @@ public class EmpleadosController {
     @FXML
     private TableColumn<Empleado, String> Correo;
     @FXML
-    private ComboBox<Estado> Estado;
+    private ComboBox<Estado> estado;
     @FXML
     private Button Agregarbutt;
     @FXML
@@ -42,6 +43,14 @@ public class EmpleadosController {
     private Button returnbutt;
     @FXML
     public void initialize(){
+        estado.getItems().setAll(Estado.values());
+        cedula.setCellValueFactory(new PropertyValueFactory<>("cedula"));
+        Nombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        Apellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
+        telefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
+        Correo.setCellValueFactory(new PropertyValueFactory<>("correo"));
+
+
         TableView.getItems().setAll(Empleado.cargarEmpleados());
 
     }

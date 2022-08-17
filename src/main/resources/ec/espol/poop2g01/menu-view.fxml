@@ -15,7 +15,7 @@
       </VBox>
       <VBox alignment="CENTER" layoutX="300.0" prefHeight="400.0" prefWidth="300.0" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="empleados" mnemonicParsing="false" text="Empleados" />
+            <Button fx:id="empleados" mnemonicParsing="false" onAction="#cambiarAEmpleados" text="Empleados" />
             <Button fx:id="clientes" mnemonicParsing="false" text="Clientes" />
             <Button fx:id="salirBtn" mnemonicParsing="false" onAction="#salir" text="Salir" />
          </children>

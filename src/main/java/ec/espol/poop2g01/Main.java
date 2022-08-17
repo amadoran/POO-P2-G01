@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main{
@@ -38,8 +39,10 @@ public class Main{
     
   public static void main(String[] args){
     inicializarSistema();
-    try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("src/main/resources/ec/espol/poop2g01/archivos/servicios.dat"))){
-      os.writeObject(servicios);
+    try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("src/main/resources/ec/espol/poop2g01/archivos/empleados.dat"))){
+      List<Empleado> empleados = new ArrayList<>();
+      empleados.add((Empleado) personas.get(0));
+      os.writeObject(empleados);
     } catch (IOException e){
       e.printStackTrace();
     }
