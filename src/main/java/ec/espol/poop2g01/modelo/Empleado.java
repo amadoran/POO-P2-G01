@@ -1,5 +1,12 @@
 package ec.espol.poop2g01.modelo;
 
+import ec.espol.poop2g01.Application;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 //Clase Empleado heredada de su clase padre Personal
 public class Empleado extends Personal{
   
@@ -31,6 +38,19 @@ public class Empleado extends Personal{
     setTelefono(telefono);
     setCorreo(correo);
     this.estado = estado;
+
+  }
+  public static List<Empleado> cargarEmpleados(){
+    List<Empleado> empleados= new ArrayList<>();
+    try (ObjectInputStream ois = new ObjectInputStream(Application.class.getResourceAsStream("archivos/empleados.dat"))){
+      empleados = (ArrayList<Empleado>) ois.readObject();
+    } catch (IOException e){
+      e.printStackTrace();
+    } catch (ClassNotFoundException e){
+      e.printStackTrace();
+    }
+    return empleados;
+
   }
 
   //metodo para cambiar el estado a inactivo del empleado
