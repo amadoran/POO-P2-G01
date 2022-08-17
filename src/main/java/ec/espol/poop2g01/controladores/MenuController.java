@@ -47,4 +47,13 @@ public class MenuController {
         stage.setScene(scene1);
         stage.show();
     }
+
+    public void cambiarAEmpleados() throws IOException{
+        Stage stage = (Stage) anchorPane.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("empleados.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        stage.setTitle("Empleados");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
