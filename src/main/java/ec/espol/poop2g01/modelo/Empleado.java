@@ -1,5 +1,4 @@
-package modelo;
-import java.util.*;
+package ec.espol.poop2g01.modelo;
 
 //Clase Empleado heredada de su clase padre Personal
 public class Empleado extends Personal{
@@ -12,7 +11,11 @@ public class Empleado extends Personal{
   public Empleado(int cedula,String nombre, String apellido, int telefono, String correo, Estado estado){
     super(cedula, nombre, apellido, telefono,correo);
     this.estado = estado;
-    
+  }
+
+  public Empleado(String nombre, String apellido){
+    super(nombre, apellido);
+    estado = Estado.INACTIVO;
   }
 
   //metodo para agregar a los empleados
