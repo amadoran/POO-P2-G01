@@ -1,6 +1,6 @@
 package ec.espol.poop2g01.controladores;
 
-import ec.espol.poop2g01.Application;
+import ec.espol.poop2g01.Aplicacion;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -48,7 +48,7 @@ public class ServiciosController {
     }
 
     public void escenaAgregado() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("agregarServicio-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("agregarServicio-view.fxml"));
         stage = (Stage) fScene.getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Agregar Servicios");

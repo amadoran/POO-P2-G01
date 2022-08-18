@@ -1,6 +1,6 @@
 package ec.espol.poop2g01.controladores;
 
-import ec.espol.poop2g01.Application;
+import ec.espol.poop2g01.Aplicacion;
 import ec.espol.poop2g01.modelo.Empleado;
 import ec.espol.poop2g01.modelo.Estado;
 import javafx.fxml.FXML;
@@ -63,7 +63,7 @@ public class EmpleadosController {
 
     }
     public void agregarEmpleado() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("agregarEmpleados.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("agregarEmpleados.fxml"));
         stage = (Stage) anchorPane.getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Agregar Empleado");

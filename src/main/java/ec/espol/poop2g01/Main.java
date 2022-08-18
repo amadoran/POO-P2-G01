@@ -47,6 +47,12 @@ public class Main{
       e.printStackTrace();
     }
 
+    try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("src/main/resources/ec/espol/poop2g01/archivos/servicios.dat"))){
+      os.writeObject(servicios);
+    } catch (IOException e){
+      e.printStackTrace();
+    }
+
     Scanner input = new Scanner(System.in);
     System.out.println("---MENU---");
     //Un switch para las opciones del menú

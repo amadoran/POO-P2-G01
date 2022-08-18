@@ -1,6 +1,6 @@
 package ec.espol.poop2g01.modelo;
 
-import ec.espol.poop2g01.Application;
+import ec.espol.poop2g01.Aplicacion;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -42,7 +42,7 @@ public class Empleado extends Personal{
   }
   public static List<Empleado> cargarEmpleados(){
     List<Empleado> empleados= new ArrayList<>();
-    try (ObjectInputStream ois = new ObjectInputStream(Application.class.getResourceAsStream("archivos/empleados.dat"))){
+    try (ObjectInputStream ois = new ObjectInputStream(Aplicacion.class.getResourceAsStream("archivos/empleados.dat"))){
       empleados = (ArrayList<Empleado>) ois.readObject();
     } catch (IOException e){
       e.printStackTrace();
