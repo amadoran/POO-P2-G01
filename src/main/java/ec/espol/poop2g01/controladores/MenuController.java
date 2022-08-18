@@ -1,6 +1,6 @@
 package ec.espol.poop2g01.controladores;
 
-import ec.espol.poop2g01.Application;
+import ec.espol.poop2g01.Aplicacion;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -41,7 +41,7 @@ public class MenuController {
 
     public void cambiarAServicios() throws IOException {
         Stage stage = (Stage) anchorPane.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("servicios-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("servicios-view.fxml"));
         Scene scene1 = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Servicios");
         stage.setScene(scene1);
@@ -50,7 +50,7 @@ public class MenuController {
 
     public void cambiarAEmpleados() throws IOException{
         Stage stage = (Stage) anchorPane.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("empleados.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("empleados.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Empleados");
         stage.setScene(scene);

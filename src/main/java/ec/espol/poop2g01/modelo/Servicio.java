@@ -1,6 +1,6 @@
 package ec.espol.poop2g01.modelo;
 
-import ec.espol.poop2g01.Application;
+import ec.espol.poop2g01.Aplicacion;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class Servicio implements Serializable {
 
   public static List<Servicio> cargarServicios(){
       List<Servicio> servicios = new ArrayList<>();
-      try (ObjectInputStream ois = new ObjectInputStream(Application.class.getResourceAsStream("archivos/servicios.dat"))){
+      try (ObjectInputStream ois = new ObjectInputStream(Aplicacion.class.getResourceAsStream("archivos/servicios.dat"))){
           servicios = (ArrayList<Servicio>) ois.readObject();
       } catch (IOException e){
           e.printStackTrace();
