@@ -1,8 +1,11 @@
 package ec.espol.poop2g01.controladores;
 
+import ec.espol.poop2g01.Application;
 import ec.espol.poop2g01.modelo.Empleado;
 import ec.espol.poop2g01.modelo.Estado;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -11,6 +14,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
 public class EmpleadosController {
 
     @FXML
@@ -41,6 +48,7 @@ public class EmpleadosController {
     private Button Eliminarbutt;
     @FXML
     private Button returnbutt;
+    private Stage stage;
     @FXML
     public void initialize(){
         estado.getItems().setAll(Estado.values());
@@ -54,6 +62,15 @@ public class EmpleadosController {
         TableView.getItems().setAll(Empleado.cargarEmpleados());
 
     }
+    public void agregarEmpleado() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("agregarEmpleados.fxml"));
+        stage = (Stage) anchorPane.getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        stage.setTitle("Agregar Empleado");
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
 
 

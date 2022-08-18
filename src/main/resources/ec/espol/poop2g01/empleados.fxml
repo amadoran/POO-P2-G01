@@ -43,7 +43,7 @@
             </FlowPane>
             <HBox prefHeight="208.0" prefWidth="600.0">
                <children>
-                  <Button fx:id="Agregarbutt" mnemonicParsing="false" text="Agregar Empleado">
+                  <Button fx:id="Agregarbutt" mnemonicParsing="false" onAction="#agregarEmpleado" text="Agregar Empleado">
                      <HBox.margin>
                         <Insets left="50.0" top="25.0" />
                      </HBox.margin>

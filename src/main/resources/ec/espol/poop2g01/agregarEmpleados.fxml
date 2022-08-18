@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.espol.poop2g01.AgregarEmpleados">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="601.0">
+         <children>
+            <Label fx:id="AgregarEmpleado" alignment="TOP_CENTER" prefHeight="35.0" prefWidth="175.0" text="Agregar Empleado">
+               <VBox.margin>
+                  <Insets left="200.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <GridPane prefHeight="280.0" prefWidth="601.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="248.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.0" minWidth="10.0" prefWidth="353.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="39.0" minHeight="0.0" prefHeight="32.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="CedulaLabel" prefHeight="17.0" prefWidth="270.0" text="Cedula">
+                     <padding>
+                        <Insets left="100.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="NombreLabel" prefHeight="17.0" prefWidth="284.0" text="Nombre" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="100.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="ApellidoLabel" prefHeight="17.0" prefWidth="290.0" text="Apellido" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets left="100.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="TelefonoLabel" prefHeight="17.0" prefWidth="288.0" text="Telefono" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets left="100.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="CorreoLabel" prefHeight="17.0" prefWidth="290.0" text="Correo" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets left="100.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="EstadoLabel" prefHeight="17.0" prefWidth="290.0" text="Estado" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets left="100.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="TextFieldCedula" prefHeight="25.0" prefWidth="300.0" GridPane.columnIndex="1">
+                     <padding>
+                        <Insets bottom="4.0" left="7.0" right="7.0" top="4.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" right="20.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="TextFieldNombre" layoutX="278.0" layoutY="13.0" prefHeight="25.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="4.0" left="7.0" right="7.0" top="4.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" right="20.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="TextFieldApellido" layoutX="278.0" layoutY="43.0" prefHeight="25.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets bottom="4.0" left="7.0" right="7.0" top="4.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" right="20.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="TextFieldTelefono" layoutX="278.0" layoutY="73.0" prefHeight="25.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets bottom="4.0" left="7.0" right="7.0" top="4.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" right="20.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="TextFieldCorreo" layoutX="278.0" layoutY="103.0" prefHeight="25.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets bottom="4.0" left="7.0" right="7.0" top="4.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="25.0" right="20.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <ComboBox fx:id="ComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="25.0" right="25.0" />
+                     </GridPane.margin>
+                  </ComboBox>
+               </children>
+            </GridPane>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="Agregarbutt" mnemonicParsing="false" text="Agregar">
+                     <HBox.margin>
+                        <Insets left="200.0" top="50.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="Cancelarbutt" mnemonicParsing="false" text="Cancelar">
+                     <HBox.margin>
+                        <Insets left="75.0" top="50.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
