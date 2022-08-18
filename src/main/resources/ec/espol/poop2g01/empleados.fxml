@@ -14,17 +14,17 @@
 
 <AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.espol.poop2g01.controladores.EmpleadosController">
    <children>
-      <VBox fx:id="VBox" layoutX="-2.0" layoutY="-2.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="VBox" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="Empleados" alignment="TOP_CENTER" prefHeight="50.0" prefWidth="110.0" text="Empleados">
+            <Label fx:id="Empleados" alignment="CENTER" prefHeight="24.0" prefWidth="110.0" text="Empleados">
                <VBox.margin>
-                  <Insets left="250.0" />
+                  <Insets />
                </VBox.margin>
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <FlowPane fx:id="FlowPane" prefHeight="360.0" prefWidth="602.0">
+            <FlowPane fx:id="FlowPane" alignment="CENTER" prefHeight="249.0" prefWidth="600.0">
                <children>
                   <TableView fx:id="TableView" prefHeight="252.0" prefWidth="595.0">
                     <columns>
@@ -41,28 +41,28 @@
                   </TableView>
                </children>
             </FlowPane>
-            <HBox prefHeight="208.0" prefWidth="600.0">
+            <HBox alignment="CENTER" prefHeight="34.0" prefWidth="600.0" spacing="100.0">
                <children>
                   <Button fx:id="Agregarbutt" mnemonicParsing="false" onAction="#agregarEmpleado" text="Agregar Empleado">
                      <HBox.margin>
-                        <Insets left="50.0" top="25.0" />
+                        <Insets />
                      </HBox.margin>
                   </Button>
                   <Button fx:id="Editarbutt" mnemonicParsing="false" text="Editar empleado">
                      <HBox.margin>
-                        <Insets left="100.0" top="25.0" />
+                        <Insets />
                      </HBox.margin>
                   </Button>
                   <Button fx:id="Eliminarbutt" mnemonicParsing="false" text="Eliminar empleado">
                      <HBox.margin>
-                        <Insets left="100.0" top="25.0" />
+                        <Insets />
                      </HBox.margin>
                   </Button>
                </children>
             </HBox>
             <Button fx:id="returnbutt" mnemonicParsing="false" text="Regresar al menu">
                <VBox.margin>
-                  <Insets left="265.0" />
+                  <Insets />
                </VBox.margin>
             </Button>
          </children>
