@@ -3,9 +3,10 @@ package ec.espol.poop2g01;
 
 import ec.espol.poop2g01.modelo.*;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main{
@@ -37,12 +38,12 @@ public class Main{
     
   public static void main(String[] args){
     inicializarSistema();
-//    try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/ec/espol/poop2g01/archivos/empleados.csv"))){
-//      Empleado empleado = (Empleado) personas.get(0);
-//      bw.write(empleado.getCedula()+ ","+empleado.getNombre()+","+empleado.getApellido()+","+empleado.getTelefono()+","+empleado.getCorreo()+","+empleado.getEstado());
-//    } catch (IOException e){
-//      e.printStackTrace();
-//    }
+ try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/ec/espol/poop2g01/archivos/empleados.csv"))){
+   Empleado empleado = (Empleado) personas.get(0);
+     bw.write(empleado.getCedula()+ ","+empleado.getNombre()+","+empleado.getApellido()+","+empleado.getTelefono()+","+empleado.getCorreo()+","+empleado.getEstado());
+    } catch (IOException e){
+     e.printStackTrace();
+    }
 
 //    try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("src/main/resources/ec/espol/poop2g01/archivos/servicios.dat"))){
 //      os.writeObject(servicios);

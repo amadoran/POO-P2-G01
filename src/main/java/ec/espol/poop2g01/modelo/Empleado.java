@@ -5,7 +5,6 @@ import ec.espol.poop2g01.Aplicacion;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +43,8 @@ public class Empleado extends Personal{
   }
   public static List<Empleado> cargarEmpleados(){
     List<Empleado> empleados= new ArrayList<>();
+    System.out.println(Aplicacion.class.getResource("archivos/empleados.csv"));
+    System.out.println(Aplicacion.class.getResource("archivos/empleados.csv").getPath());
     try (BufferedReader br = new BufferedReader(new FileReader(Aplicacion.class.getResource("archivos/empleados.csv").getPath()))){
       String line;
       while ((line = br.readLine()) != null){
@@ -54,6 +55,7 @@ public class Empleado extends Personal{
     } catch (IOException e) {
       e.printStackTrace();
     }
+
     return empleados;
 
   }

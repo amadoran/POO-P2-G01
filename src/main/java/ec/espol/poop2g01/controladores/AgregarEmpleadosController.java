@@ -3,7 +3,6 @@ package ec.espol.poop2g01.controladores;
 
 import ec.espol.poop2g01.modelo.Estado;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -42,26 +41,21 @@ public class AgregarEmpleadosController {
 
     public void initialize(){
         ComboBox.getItems().setAll(Estado.values());
+        agregandoEmpleado();
 
     }
 public void agregandoEmpleado(){
     BufferedWriter br;
     FileWriter fr;
     try {
-        fr = new FileWriter("src/main/resources/ec/espol/poop2g01/archivos/empleados.dat");
+        fr = new FileWriter("src/main/resources/ec/espol/poop2g01/archivos/empleados.csv",true);
         br=new BufferedWriter(fr);
         br.write(TextFieldCedula.getAccessibleText()+","+TextFieldNombre.getAccessibleText()+","+TextFieldApellido.getAccessibleText()
-        +","+TextFieldCorreo.getAccessibleText()+","+TextFieldTelefono.getAccessibleText());
-        br.close();
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Alerta");
-        alert.setHeaderText("Su empleado ha sido agregado.");
-        alert.setContentText("Click \"OK\" para confirmar.");
+        +","+TextFieldCorreo.getAccessibleText()+","+TextFieldTelefono.getAccessibleText()+","+ComboBox.getItems());
     } catch (FileNotFoundException e){
         e.printStackTrace();
     }catch (IOException e){
         e.printStackTrace();
-
     }catch (Exception e){
         System.out.println("Excepcion general encontrada");
 
