@@ -2,6 +2,8 @@ package ec.espol.poop2g01.modelo;
 
 import ec.espol.poop2g01.Aplicacion;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
@@ -42,11 +44,14 @@ public class Empleado extends Personal{
   }
   public static List<Empleado> cargarEmpleados(){
     List<Empleado> empleados= new ArrayList<>();
-    try (ObjectInputStream ois = new ObjectInputStream(Aplicacion.class.getResourceAsStream("archivos/empleados.dat"))){
-      empleados = (ArrayList<Empleado>) ois.readObject();
-    } catch (IOException e){
-      e.printStackTrace();
-    } catch (ClassNotFoundException e){
+    try (BufferedReader br = new BufferedReader(new FileReader(Aplicacion.class.getResource("archivos/empleados.csv").getPath()))){
+      String line;
+      while ((line = br.readLine()) != null){
+        String[] datos = line.split(",");
+        Empleado empleado = new Empleado(Integer.parseInt(datos[0]), datos[1], datos[2], Integer.parseInt(datos[3]), datos[4], Estado.valueOf(datos[5]));
+        empleados.add(empleado);
+      }
+    } catch (IOException e) {
       e.printStackTrace();
     }
     return empleados;
@@ -59,6 +64,14 @@ public class Empleado extends Personal{
     estado = Estado.INACTIVO;
   }
 
+  public Estado getEstado() {
+    return estado;
+  }
+
+  public void setEstado(Estado estado) {
+    this.estado = estado;
+  }
+
   //metodo toString
   @Override
   public String toString(){
@@ -69,5 +82,5 @@ public class Empleado extends Personal{
       "Correo: "+getCorreo() + "\n"+
       "Estado: "+estado +"]";
   }
-  }
+}
 

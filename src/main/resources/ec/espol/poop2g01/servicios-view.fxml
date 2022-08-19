@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.espol.poop2g01.controladores.ServiciosController">
    <children>
       <VBox fx:id="fScene" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -23,12 +22,12 @@
             </Label>
             <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TableView fx:id="tableView" prefHeight="200.0" prefWidth="600.0">
+                  <TableView fx:id="tableView" prefHeight="200.0" prefWidth="598.0">
                      <columns>
-                        <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
-                        <TableColumn fx:id="colDuracion" prefWidth="150.0" text="Duración" />
-                        <TableColumn fx:id="colPrecio" prefWidth="150.0" text="Precio" />
-                        <TableColumn fx:id="colEstado" prefWidth="150.0" text="Estado" />
+                        <TableColumn fx:id="colNombre" prefWidth="149.0" text="Nombre" />
+                        <TableColumn fx:id="colDuracion" prefWidth="149.0" text="Duración" />
+                        <TableColumn fx:id="colPrecio" prefWidth="149.0" text="Precio" />
+                        <TableColumn fx:id="colEstado" prefWidth="149.0" text="Estado" />
                      </columns>
                   </TableView>
                </children>
