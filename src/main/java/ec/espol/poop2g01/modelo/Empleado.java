@@ -43,8 +43,6 @@ public class Empleado extends Personal{
   }
   public static List<Empleado> cargarEmpleados(){
     List<Empleado> empleados= new ArrayList<>();
-    System.out.println(Aplicacion.class.getResource("archivos/empleados.csv"));
-    System.out.println(Aplicacion.class.getResource("archivos/empleados.csv").getPath());
     try (BufferedReader br = new BufferedReader(new FileReader(Aplicacion.class.getResource("archivos/empleados.csv").getPath()))){
       String line;
       while ((line = br.readLine()) != null){

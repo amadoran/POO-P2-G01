@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?importgit javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<?import javafx.scene.layout.FlowPane?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.espol.poop2g01.controladores.JuegoController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <StackPane alignment="CENTER_LEFT" prefHeight="95.0" prefWidth="600.0">
+               <children>
+                  <ImageView fitHeight="75.0" fitWidth="213.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label text="Hacia la derecha">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </StackPane>
+            <FlowPane prefHeight="232.0" prefWidth="600.0">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+               <children>
+                  <ImageView fitHeight="116.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </FlowPane>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="73.0" prefWidth="600.0" spacing="125.0">
+               <children>
+                  <ImageView fitHeight="73.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="73.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
