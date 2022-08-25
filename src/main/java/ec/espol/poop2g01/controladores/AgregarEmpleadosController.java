@@ -3,6 +3,7 @@ package ec.espol.poop2g01.controladores;
 
 import ec.espol.poop2g01.modelo.Estado;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -11,7 +12,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -41,27 +41,35 @@ public class AgregarEmpleadosController {
 
     public void initialize(){
         ComboBox.getItems().setAll(Estado.values());
-        agregandoEmpleado();
 
     }
 public void agregandoEmpleado(){
-    BufferedWriter br;
-    FileWriter fr;
-    try {
-        fr = new FileWriter("src/main/resources/ec/espol/poop2g01/archivos/empleados.csv",true);
-        br=new BufferedWriter(fr);
-        br.write(TextFieldCedula.getAccessibleText()+","+TextFieldNombre.getAccessibleText()+","+TextFieldApellido.getAccessibleText()
-        +","+TextFieldCorreo.getAccessibleText()+","+TextFieldTelefono.getAccessibleText()+","+ComboBox.getItems());
-    } catch (FileNotFoundException e){
-        e.printStackTrace();
+    String nombre = TextFieldNombre.getText();
+    String cedula = TextFieldCedula.getText();
+    String email = TextFieldCorreo.getText();
+    String telefono = TextFieldTelefono.getText();
+    Estado estado = ComboBox.getValue();
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter("empleados.csv",true));){
+        bw.newLine();
+        bw.write(cedula+","+nombre+","+telefono+","+email+","+estado);
     }catch (IOException e){
-        e.printStackTrace();
-    }catch (Exception e){
-        System.out.println("Excepcion general encontrada");
+        System.out.println("error");
+    }
+    reestablecer( TextFieldNombre,TextFieldCedula,TextFieldTelefono,TextFieldCorreo,ComboBox);
+    Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+    alerta.setTitle("Empleado agregado");
+    alerta.setHeaderText("Su empleado ha sido agregado");
+    alerta.showAndWait();
 
+}
+    private static void reestablecer(TextField c1, TextField c2, TextField c3, TextField c4, javafx.scene.control.ComboBox<Estado> c){
+        c1.setText(null);
+        c2.setText(null);
+        c3.setText(null);
+        c4.setText(null);
+        c.setValue(null);
     }
 
-    }
 
 }
 

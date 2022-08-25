@@ -2,9 +2,7 @@ package ec.espol.poop2g01.modelo;
 
 import ec.espol.poop2g01.Aplicacion;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +54,18 @@ public class Empleado extends Personal{
 
     return empleados;
 
+  }
+  //metodo para sobreescribir el archivo de empleados al momento de editar o eliminar el empleado
+  public static void sobreescribirArchivo(ArrayList<Empleado> empleados){
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/ec/espol/poop2g01/archivos/empleados.csv"));){
+      bw.write("Cédula,nombre,telefono,email,estado");
+      for(Empleado e:empleados){
+        bw.newLine();
+        bw.write(e.getCedula()+","+e.getNombre()+","+e.getTelefono()+","+e.getCorreo()+","+e.estado);
+      }
+    }catch (IOException e){
+      System.out.println("error");
+    }
   }
 
   //metodo para cambiar el estado a inactivo del empleado
