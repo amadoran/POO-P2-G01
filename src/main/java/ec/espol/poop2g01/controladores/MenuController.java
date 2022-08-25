@@ -42,9 +42,9 @@ public class MenuController {
     public void cambiarAServicios() throws IOException {
         Stage stage = (Stage) anchorPane.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("servicios-view.fxml"));
-        Scene scene1 = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Servicios");
-        stage.setScene(scene1);
+        stage.setScene(scene);
         stage.show();
     }
 
