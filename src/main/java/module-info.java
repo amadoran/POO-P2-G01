@@ -1,6 +1,7 @@
 module ec.espol.poop2g01 {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.media;
     requires java.desktop;
 
 
