@@ -46,5 +46,6 @@ public class ActividadController {
         });
         hboxAbajo.getChildren().clear();
         hboxAbajo.getChildren().add(imageView);
+        JuegoController.setMaximo(cmbCantidad.getValue());
     }
 }
