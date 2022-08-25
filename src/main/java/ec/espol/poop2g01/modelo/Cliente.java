@@ -33,10 +33,10 @@ public class Cliente extends Personal{
       String linea;
       while ((linea = br.readLine())!=null){
         String[] datos = linea.split(",");
-        clientes.add(new Cliente(Integer.parseInt(datos[0]),datos[1],datos[2],Integer.parseInt(datos[3]),datos[4],Representante.valueOf(datos[5])));
+        clientes.add(new Cliente(Integer.parseInt(datos[0]),datos[1],datos[2],Integer.parseInt(datos[3]),datos[4],new Representante(29, "", "", 9, "")));
       }
     }catch (IOException e){
-
+      e.printStackTrace();
     }
     return clientes;
   }
