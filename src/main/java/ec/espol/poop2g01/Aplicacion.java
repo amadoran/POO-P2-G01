@@ -10,9 +10,9 @@ public class Aplicacion extends javafx.application.Application {
     public static final String servPath = "archivos/servicios.dat";
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("menu-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("actividad.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        stage.setTitle("Sistema para manejo de atenciones");
+        stage.setTitle("Actividad");
         stage.setScene(scene);
         stage.show();
     }
