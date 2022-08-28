@@ -1,6 +1,7 @@
 package ec.espol.poop2g01.controladores;
 
 import ec.espol.poop2g01.Aplicacion;
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,7 +13,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MenuController {
+public class
+MenuController {
     @FXML
     private AnchorPane anchorPane;
     @FXML
@@ -53,6 +55,15 @@ public class MenuController {
         FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("empleados.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Empleados");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void cambiarACitas() throws IOException{
+        Stage stage = (Stage) anchorPane.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("citas.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(),600,400);
+        stage.setTitle("Citas");
         stage.setScene(scene);
         stage.show();
     }

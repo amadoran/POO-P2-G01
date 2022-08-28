@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.espol.poop2g01.RegistrarAtención">
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.espol.poop2g01.controladores.RegistrarAtencionController">
    <children>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -45,7 +45,7 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Button fx:id="btnGuardar" mnemonicParsing="false" text="Guardar" />
-                  <Button fx:id="btnRealizarActividad" mnemonicParsing="false" text="Realizar Actividad" />
+                  <Button fx:id="btnRealizarActividad" mnemonicParsing="false" onAction="#RealizarActividad" text="Realizar Actividad" />
                </children>
             </HBox>
          </children>
