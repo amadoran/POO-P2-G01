@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.espol.poop2g01.ActividadesRealizadas">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="actividadesRealizadas" text="Actividades Realizadas" />
+               </children></HBox>
+            <HBox prefHeight="176.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="Cliente" text="Cliente:" />
+                  <Label fx:id="mostrarCliente" prefHeight="17.0" prefWidth="198.0" />
+               </children></HBox>
+            <TableView prefHeight="117.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="Actividad" prefWidth="75.0" text="Actividad" />
+                <TableColumn fx:id="Fecha" prefWidth="75.0" text="Fecha" />
+                  <TableColumn fx:id="Aciertos" prefWidth="75.0" text="Aciertos " />
+                  <TableColumn fx:id="Fallos" prefWidth="75.0" text="Fallos" />
+                  <TableColumn fx:id="Tiempo" prefWidth="75.0" text="Tiempo" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
