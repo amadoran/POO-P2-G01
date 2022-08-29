@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.espol.poop2g01.controladores.ConsultarAtencionController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="63.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="ConsultaDeAtenciones" text="Consulta de Atenciones" />
+               </children>
+            </HBox>
+            <HBox prefHeight="63.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="Filtro" text="Filtrar por fecha (DD/MM/AA):  " />
+                  <TextField fx:id="FiltroFecha" />
+               </children>
+            </HBox>
+            <TableView prefHeight="170.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="colFecha" prefWidth="75.0" text="Fecha" />
+                  <TableColumn fx:id="colCliente" prefWidth="75.0" text="Cliente" />
+                <TableColumn fx:id="colDuracion" prefWidth="110.0" text="Duración Real" />
+                  <TableColumn fx:id="colTerapista" prefWidth="77.0" text="Terapista" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnMenu" mnemonicParsing="false" onAction="#regresarMenu" text="Regresar al menú principal" />
+               </children></HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

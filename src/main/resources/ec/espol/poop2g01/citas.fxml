@@ -15,12 +15,12 @@
    <children>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="604.0">
+            <HBox alignment="CENTER" prefHeight="33.0" prefWidth="604.0">
                <children>
                   <Label fx:id="Citas" prefHeight="17.0" prefWidth="30.0" text="Citas" />
                </children>
             </HBox>
-            <HBox prefHeight="139.0" prefWidth="604.0">
+            <HBox prefHeight="104.0" prefWidth="604.0">
                <children>
                   <Label fx:id="Cliente" text="Cliente:" />
                   <TextField fx:id="TextoCliente" />
@@ -28,19 +28,19 @@
             </HBox>
             <FlowPane prefHeight="98.0" prefWidth="604.0">
                <children>
-                  <TableView prefHeight="134.0" prefWidth="604.0">
+                  <TableView prefHeight="121.0" prefWidth="604.0">
                     <columns>
-                      <TableColumn fx:id="Nombre" prefWidth="75.0" text="Nombre" />
-                        <TableColumn fx:id="Terapista" prefWidth="75.0" text="Terapista" />
-                        <TableColumn fx:id="Servicio" prefWidth="75.0" text="Servicio" />
-                        <TableColumn fx:id="Fecha" prefWidth="75.0" text="Fecha " />
-                        <TableColumn fx:id="Hora" prefWidth="75.0" text="Hora" />
-                        <TableColumn fx:id="Opciones" prefWidth="228.0" text="Opciones" />
+                      <TableColumn fx:id="colNombre" prefWidth="75.0" text="Nombre" />
+                        <TableColumn fx:id="colTerapista" prefWidth="75.0" text="Terapista" />
+                        <TableColumn fx:id="colServicio" prefWidth="75.0" text="Servicio" />
+                        <TableColumn fx:id="colFecha" prefWidth="75.0" text="Fecha " />
+                        <TableColumn fx:id="colHora" prefWidth="75.0" text="Hora" />
+                        <TableColumn fx:id="colOpciones" prefWidth="228.0" text="Opciones" />
                     </columns>
                   </TableView>
                </children>
             </FlowPane>
-            <HBox alignment="CENTER" prefHeight="81.0" prefWidth="604.0">
+            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="604.0">
                <children>
                   <Button fx:id="btnCrearCitas" mnemonicParsing="false" onAction="#IrACrearCitas" text="Crear Citas" />
                   <Button fx:id="btnRegistrarAtencion" mnemonicParsing="false" onAction="#IrARegistrarAtencion" text="Registrar Atencion" />
@@ -49,6 +49,11 @@
                <VBox.margin>
                   <Insets top="15.0" />
                </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="31.0" prefWidth="604.0">
+               <children>
+                  <Button fx:id="btnRegresarMenu" mnemonicParsing="false" onAction="#irAMenu" text="Regresar al menú principal" />
+               </children>
             </HBox>
          </children>
       </VBox>

@@ -9,13 +9,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ActividadesController {
+public class ConsultarAtencionController {
 
     @FXML
     private AnchorPane anchorPane;
-    public void irAMenuDeCitas() throws IOException {
+
+    public void regresarMenu() throws IOException {
         Stage stage = (Stage) anchorPane.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("citas.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("menu-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Servicios");
         stage.setScene(scene);

@@ -1,4 +1,9 @@
 package ec.espol.poop2g01.modelo;
+import ec.espol.poop2g01.Aplicacion;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 //Se crea la clase cita con sus respectivos atributos
 public class Cita{
@@ -30,6 +35,8 @@ public class Cita{
         }
       }
     }
+
+
   //Elimina una cita de acuerdo a la cedula y la fecha de la cita que se desea eliminar
   public static void eliminarCita(ArrayList<Cita> citas){
     Scanner usuario=new Scanner(System.in);

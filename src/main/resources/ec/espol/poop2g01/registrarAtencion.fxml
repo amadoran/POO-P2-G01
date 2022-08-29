@@ -46,6 +46,7 @@
                <children>
                   <Button fx:id="btnGuardar" mnemonicParsing="false" text="Guardar" />
                   <Button fx:id="btnRealizarActividad" mnemonicParsing="false" onAction="#RealizarActividad" text="Realizar Actividad" />
+                  <Button fx:id="btnMenu" mnemonicParsing="false" onAction="#irAMenuDeCitas" text="Regresar al menú de citas" />
                </children>
             </HBox>
          </children>

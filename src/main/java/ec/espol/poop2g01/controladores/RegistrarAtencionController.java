@@ -23,4 +23,12 @@ public class RegistrarAtencionController {
         stage.setScene(scene);
         stage.show();
     }
+    public void irAMenuDeCitas() throws IOException {
+        Stage stage = (Stage) anchorPane.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("citas.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        stage.setTitle("Servicios");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
