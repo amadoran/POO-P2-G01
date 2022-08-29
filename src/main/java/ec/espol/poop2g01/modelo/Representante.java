@@ -12,6 +12,6 @@ public class Representante extends Personal{
 //Metodo toString
   @Override
   public String toString(){
-    return "Representante{"+ super.toString() + "}";
+    return getNombre() + " " + getApellido();
   }
 }

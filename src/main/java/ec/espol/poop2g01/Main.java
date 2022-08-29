@@ -3,9 +3,7 @@ package ec.espol.poop2g01;
 
 import ec.espol.poop2g01.modelo.*;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -39,26 +37,28 @@ public class Main{
   public static void main(String[] args){
     inicializarSistema();
     //Escribiendo en el archivo empleados los empleados actuales
-    try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/ec/espol/poop2g01/archivos/empleados.csv"))){
-      Empleado empleado = (Empleado) personas.get(0);
-      bw.write(empleado.getCedula()+ ","+empleado.getNombre()+","+empleado.getApellido()+","+empleado.getTelefono()+","+empleado.getCorreo()+","+empleado.getEstado());
-    } catch (IOException e){
-      e.printStackTrace();}
-    //Escribiendo en el archivo csv los clientes actuales
-    try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/ec/espol/poop2g01/archivos/clientes.csv"))){
-      Cliente cliente = (Cliente) personas.get(1);
-      Cliente cliente1=(Cliente) personas.get(2);
-      bw.write(cliente.getCedula()+ ","+cliente.getNombre()+","+cliente.getApellido()+","+cliente.getTelefono()+","+cliente.getCorreo()+","+cliente.getRepresentante());
-      bw.write(cliente1.getCedula()+ ","+cliente1.getNombre()+","+cliente1.getApellido()+","+cliente1.getTelefono()+","+cliente1.getCorreo()+","+cliente1.getRepresentante());
-    } catch (IOException e){
-      e.printStackTrace();}
-
-
-//    try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("src/main/resources/ec/espol/poop2g01/archivos/servicios.dat"))){
-//      os.writeObject(servicios);
+//    try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/ec/espol/poop2g01/archivos/empleados.csv"))){
+//      Empleado empleado = (Empleado) personas.get(0);
+//      bw.write(empleado.getCedula()+ ","+empleado.getNombre()+","+empleado.getApellido()+","+empleado.getTelefono()+","+empleado.getCorreo()+","+empleado.getEstado());
 //    } catch (IOException e){
-//      e.printStackTrace();
-//    }
+//      e.printStackTrace();}
+    //Escribiendo en el archivo csv los clientes actuales
+//    try (ObjectOutputStream obs = new ObjectOutputStream(new FileOutputStream("src/main/resources/ec/espol/poop2g01/archivos/clientes.dat"))){
+//      ArrayList<Cliente> clientes = new ArrayList<>();
+//      Cliente cliente = (Cliente) personas.get(1);
+//      Cliente cliente1=(Cliente) personas.get(2);
+//      clientes.add(cliente);
+//      clientes.add(cliente1);
+//      obs.writeObject(clientes);
+//    } catch (IOException e){
+//      e.printStackTrace();}
+
+
+    try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("src/main/resources/ec/espol/poop2g01/archivos/servicios.dat"))){
+      os.writeObject(servicios);
+    } catch (IOException e){
+      e.printStackTrace();
+    }
 
     Scanner input = new Scanner(System.in);
     System.out.println("---MENU---");

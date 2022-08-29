@@ -85,12 +85,7 @@ public class Empleado extends Personal{
   //metodo toString
   @Override
   public String toString(){
-    return "Empleado[\n" +
-      "Nombre: "+getNombre() + "\n" +
-      "Apellido: "+getApellido() + "\n"+
-      "Telefono: "+getTelefono() + "\n"+
-      "Correo: "+getCorreo() + "\n"+
-      "Estado: "+estado +"]";
+    return getNombre() + " " + getApellido();
   }
 }
 
