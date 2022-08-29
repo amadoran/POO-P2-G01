@@ -73,4 +73,5 @@ public class Servicio implements Serializable {
   public String toString(){
     return "Servicio {Nombre: " + nombreServicio + ", Duración (minutos): " + duracionServicio + ", Precio: $" + precio + ", Estado:" + estado + "}";
   }
+
 }
