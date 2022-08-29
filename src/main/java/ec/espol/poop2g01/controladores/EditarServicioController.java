@@ -11,10 +11,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.io.*;
-import java.util.ArrayList;
+import java.io.IOException;
 
-public class AgregarServicioController {
+
+public class EditarServicioController {
     @FXML
     private AnchorPane anchorPane;
     @FXML
@@ -28,23 +28,30 @@ public class AgregarServicioController {
     @FXML
     private ComboBox<Empleado> cmbEmpleado;
 
+    private static Servicio servicioSeleccionado;
+
     @FXML
     public void initialize(){
         SpinnerValueFactory<Integer> valueFactoryDuracion = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 480);
         SpinnerValueFactory<Double> valueFactoryPrecio = new SpinnerValueFactory.DoubleSpinnerValueFactory(1.0, 100.0);
-        valueFactoryDuracion.setValue(1);
-        valueFactoryPrecio.setValue(1.0);
-
+        valueFactoryDuracion.setValue(servicioSeleccionado.getDuracionServicio());
+        valueFactoryPrecio.setValue((double) servicioSeleccionado.getPrecio());
         spinDuracion.setValueFactory(valueFactoryDuracion);
         spinPrecio.setValueFactory(valueFactoryPrecio);
         cmbEstado.getItems().setAll(Estado.values());
+        cmbEstado.setValue(servicioSeleccionado.getEstado());
         cmbEmpleado.getItems().setAll(Empleado.cargarEmpleados());
+        cmbEmpleado.setValue(servicioSeleccionado.getEmpleado());
+        txtFNombre.setText(servicioSeleccionado.getNombreServicio());
     }
 
+    public static void setServicio(Servicio servicio){
+        servicioSeleccionado = servicio;
+    }
     @FXML
-    private void crearServicio() throws IOException {
+    private void editar() throws IOException {
         if (txtFNombre.getText().trim().equals("") || spinDuracion.getValue() == null || spinPrecio.getValue() == null
-        || cmbEmpleado.getValue() == null || cmbEstado.getValue() == null){
+                || cmbEmpleado.getValue() == null || cmbEstado.getValue() == null){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Ha habido un problema");
@@ -52,36 +59,12 @@ public class AgregarServicioController {
             alert.show();
             return;
         }
-        ObjectOutputStream obs = null;
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(Aplicacion.class.getResource("archivos/servicios.dat").getPath()))){
-            ArrayList<Servicio> servicios = (ArrayList<Servicio>) ois.readObject();
-            String nombre = txtFNombre.getText();
-            int duracion = spinDuracion.getValue();
-            float precio = spinPrecio.getValue().floatValue();
-            Estado estado = cmbEstado.getValue();
-            Empleado empleado = cmbEmpleado.getValue();
-            servicios.add(new Servicio(nombre, duracion, precio, estado, empleado));
-            obs = new ObjectOutputStream(new FileOutputStream(Aplicacion.class.getResource("archivos/servicios.dat").getPath()));
-            obs.writeObject(servicios);
-        } catch (IOException e){
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                obs.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirmación");
-        alert.setHeaderText("Se ha agregado correctamente el servicio");
-        alert.setContentText("¿Desea continuar agregando servicios?");
-        if (alert.showAndWait().get() == ButtonType.CANCEL){
-            regresarAServicios();
-        }
+
+        Servicio.editarArchivo(servicioSeleccionado, new Servicio(txtFNombre.getText(), spinDuracion.getValue(),
+                spinDuracion.getValue().floatValue(), cmbEstado.getValue(), cmbEmpleado.getValue()));
+        regresarAServicios();
     }
+
     @FXML
     private void regresarAServicios() throws IOException {
         Stage stage = (Stage) anchorPane.getScene().getWindow();

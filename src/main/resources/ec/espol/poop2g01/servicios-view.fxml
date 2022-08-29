@@ -35,11 +35,11 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Button fx:id="aggBtn" mnemonicParsing="false" onAction="#escenaAgregado" text="Agregar Servicio" />
-                  <Button fx:id="editBtn" mnemonicParsing="false" text="Editar Servicio" />
-                  <Button mnemonicParsing="false" text="Eliminar Servicio" />
+                  <Button fx:id="editBtn" mnemonicParsing="false" onAction="#editarServicio" text="Editar Servicio" />
+                  <Button mnemonicParsing="false" onAction="#eliminarServicio" text="Eliminar Servicios" />
                </children>
             </HBox>
-            <Button fx:id="returnBtn" mnemonicParsing="false" text="Regresar al menú" />
+            <Button fx:id="returnBtn" mnemonicParsing="false" onAction="#regresarAMenu" text="Regresar al menú" />
          </children>
          <padding>
             <Insets bottom="10.0" top="10.0" />

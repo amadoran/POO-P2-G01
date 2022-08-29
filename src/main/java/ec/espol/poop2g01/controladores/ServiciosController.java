@@ -14,12 +14,13 @@ import ec.espol.poop2g01.modelo.Servicio;
 import ec.espol.poop2g01.modelo.Estado;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ServiciosController {
     @FXML
     private VBox fScene;
     @FXML
-    private TableView tableView;
+    private TableView<Servicio> tableView;
     @FXML
     private TableColumn<Servicio, String> colNombre;
     @FXML
@@ -52,6 +53,35 @@ public class ServiciosController {
         stage = (Stage) fScene.getScene().getWindow();
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Agregar Servicios");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void regresarAMenu() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("menu-view.fxml"));
+        stage = (Stage) fScene.getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        stage.setTitle("Menu");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void eliminarServicio(){
+        ArrayList<Servicio> servicios = new ArrayList<>();
+        for (Servicio servicio: tableView.getSelectionModel().getSelectedItems()){
+            servicios.add(servicio);
+        }
+        Servicio.eliminarDelArchivo(servicios);
+        tableView.getItems().removeAll();
+        tableView.getItems().setAll(Servicio.cargarServicios());
+    }
+
+    public void editarServicio() throws IOException {
+        EditarServicioController.setServicio(tableView.getSelectionModel().getSelectedItem());
+        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("editarServicios.fxml"));
+        stage = (Stage) fScene.getScene().getWindow();
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        stage.setTitle("Editar Servicio");
         stage.setScene(scene);
         stage.show();
     }
