@@ -29,28 +29,34 @@ public class Cliente extends Personal{
   //metodo para cargar los clientes
   public static ArrayList<Cliente> cargarClientes(){
     ArrayList<Cliente> clientes = new ArrayList<>();
-    try (BufferedReader br = new BufferedReader(new FileReader(Aplicacion.class.getResource("archivos/servicios.csv").getPath()))){
-      String linea;
-      while ((linea = br.readLine())!=null){
-        String[] datos = linea.split(",");
-        clientes.add(new Cliente(Integer.parseInt(datos[0]),datos[1],datos[2],Integer.parseInt(datos[3]),datos[4],new Representante(29, "", "", 9, "")));
-      }
-    }catch (IOException e){
+    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("src/main/resources/ec/espol/poop2g01/archivos/clientes.dat"))) {
+      ArrayList<Cliente> ser_clientes = (ArrayList<Cliente>) ois.readObject();
+      clientes.addAll(ser_clientes);
+    } catch (IOException | ClassNotFoundException e){
       e.printStackTrace();
     }
     return clientes;
   }
   //metodo para sobreescribir el archivo de clientes al momento de editar o eliminar clientes
-  public static void sobreescribirArchivo(ArrayList<Cliente> clientes){
-    try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/ec/espol/poop2g01/archivos/clientes.csv"));){
-      bw.write("Cédula,nombre,telefono,email,representante");
-      for(Cliente c:clientes){
-        bw.newLine();
-        bw.write(c.getCedula()+","+c.getNombre()+","+c.getTelefono()+","+c.getCorreo()+","+c.representante);
-      }
+  public static void sobreescribirArchivo(Cliente cliente){
+    ObjectOutputStream obs = null;
+    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("src/main/resources/ec/espol/poop2g01/archivos/clientes.dat"))){
+      ArrayList<Cliente> clientes = (ArrayList<Cliente>) ois.readObject();
+      clientes.add(cliente);
+      obs = new ObjectOutputStream(new FileOutputStream("src/main/resources/ec/espol/poop2g01/archivos/clientes.dat"));
+      obs.writeObject(clientes);
     }catch (IOException e){
       System.out.println("error");
-    }}
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        obs.close();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+  }
 
   @Override
   public String toString(){

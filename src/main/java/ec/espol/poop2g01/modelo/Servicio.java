@@ -71,7 +71,7 @@ public class Servicio implements Serializable {
   }
   @Override
   public String toString(){
-    return "Servicio {Nombre: " + nombreServicio + ", Duración (minutos): " + duracionServicio + ", Precio: $" + precio + ", Estado:" + estado + "}";
+    return nombreServicio;
   }
 
 }

@@ -14,8 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.espol.poop2g01.controladores.AgregarServicioController">
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.espol.poop2g01.controladores.AgregarServicioController">
    <children>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -42,20 +41,20 @@
                   <Label text="Precio:" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                   <Label text="Estado:" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
                   <Label text="Empleado:" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-                  <TextField GridPane.columnIndex="1">
+                  <TextField fx:id="txtFNombre" promptText="ex: Terapia..." GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets right="20.0" />
                      </GridPane.margin>
                   </TextField>
-                  <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Spinner editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Spinner editable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="cmbEstado" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="cmbEmpleado" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Spinner fx:id="spinDuracion" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Spinner fx:id="spinPrecio" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" text="Agregar" />
+                  <Button mnemonicParsing="false" onAction="#crearServicio" text="Agregar" />
                   <Button mnemonicParsing="false" text="Cancelar" />
                </children>
             </HBox>
