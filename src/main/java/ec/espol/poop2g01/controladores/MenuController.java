@@ -67,4 +67,13 @@ MenuController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void cambiarAClientes() throws IOException{
+        Stage stage = (Stage) anchorPane.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Aplicacion.class.getResource("clientes.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        stage.setTitle("Clientes");
+        stage.setScene(scene);
+        stage.show();
+    }
   }
