@@ -10,7 +10,7 @@
          <children>
             <Button fx:id="servicios" mnemonicParsing="false" onAction="#cambiarAServicios" text="Servicios" />
             <Button fx:id="citas" mnemonicParsing="false" onAction="#cambiarACitas" text="Citas" />
-            <Button fx:id="atenciones" mnemonicParsing="false" text="Atenciones" />
+            <Button fx:id="atenciones" mnemonicParsing="false" onAction="#cambiarAAtenciones" text="Atenciones" />
          </children>
       </VBox>
       <VBox alignment="CENTER" layoutX="300.0" prefHeight="400.0" prefWidth="300.0" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

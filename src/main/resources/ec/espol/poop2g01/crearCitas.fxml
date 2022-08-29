@@ -50,7 +50,8 @@
             </GridPane>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="btnCrearCita" mnemonicParsing="false" text="Crear Cita" />
+                  <Button fx:id="btnCrearCita" mnemonicParsing="false" onAction="#CrearCita" text="Crear Cita" />
+                  <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#irAMenuDeCitas" text="Regresar al menú de citas" />
                </children>
             </HBox>
          </children>
